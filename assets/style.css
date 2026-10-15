@@ -1,0 +1,265 @@
+/* Nitrato — lata de archivo y mesa de luz.
+   Oscuro por defecto (cabina de proyección); claro = mesa de luz ámbar. */
+
+:root {
+  --base: #1d1310;
+  --surface: #291b16;
+  --edge: #0d0807;
+  --ink: #ecdcc2;
+  --muted: #b39d84;
+  --faint: #6f5a4a;
+  --amber: #eaa23a;
+  --amber-deep: #b86d1e;
+  --decay: #84a79e;
+  --rule: rgba(234, 162, 58, 0.28);
+  --hole: #3b2a21;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --base: #f2e1b3;
+    --surface: #ead396;
+    --edge: #2b1a12;
+    --ink: #24160f;
+    --muted: #5f4836;
+    --faint: #9a7d5c;
+    --amber: #a8561a;
+    --amber-deep: #7e3c0f;
+    --decay: #3f6b62;
+    --rule: rgba(126, 60, 15, 0.3);
+    --hole: #f2e1b3;
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--ink);
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.68;
+  font-feature-settings: "onum" 1, "liga" 1;
+}
+
+a { color: inherit; text-decoration-color: var(--amber); text-underline-offset: 0.18em; }
+a:hover { color: var(--amber); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+/* ---------- Borde de película (el elemento memorable) ---------- */
+
+.filmedge {
+  position: fixed;
+  top: 0; bottom: 0; left: 0;
+  width: 46px;
+  background: var(--edge);
+  z-index: 5;
+  overflow: hidden;
+}
+.filmedge::before {            /* perforaciones */
+  content: "";
+  position: absolute;
+  left: 9px; top: 0; bottom: 0;
+  width: 12px;
+  background-image: linear-gradient(var(--hole), var(--hole));
+  background-size: 12px 16px;
+  background-repeat: repeat-y;
+  -webkit-mask: repeating-linear-gradient(to bottom, #000 0 16px, transparent 16px 30px);
+          mask: repeating-linear-gradient(to bottom, #000 0 16px, transparent 16px 30px);
+  border-radius: 3px;
+}
+.filmedge span {               /* rótulo de borde, como el "NITRATE" impreso en la película */
+  position: absolute;
+  left: 27px; top: 0;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  font-family: "Big Shoulders Text", "Arial Narrow", sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  color: var(--amber);
+  opacity: 0.75;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .filmedge span { color: #eaa23a; }
+}
+
+.page { margin-left: 46px; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---------- Cabecera ---------- */
+
+.masthead {
+  padding: 2.2rem clamp(1rem, 5vw, 3.5rem) 1.4rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.brand { text-decoration: none; display: block; line-height: 0.82; }
+.brand-word {
+  font-family: "Big Shoulders Stencil Display", "Arial Narrow", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.6rem, 13vw, 8.5rem);
+  letter-spacing: 0.01em;
+  color: var(--amber);
+  display: block;
+  animation: ignite 1.1s steps(1, end) 1;
+}
+.brand:hover .brand-word { color: var(--amber); }
+.brand-line {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: "Spectral", Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.mast-nav { display: flex; gap: 1.4rem; font-family: "Big Shoulders Text", sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; }
+.mast-nav a { text-decoration: none; color: var(--muted); }
+.mast-nav a:hover, .mast-nav a[aria-current="page"] { color: var(--ink); }
+
+/* Encendido del proyector: un único parpadeo al cargar */
+@keyframes ignite {
+  0% { opacity: 0.15; } 12% { opacity: 0.9; } 18% { opacity: 0.35; }
+  30% { opacity: 1; } 38% { opacity: 0.6; } 50%, 100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .brand-word { animation: none; } }
+
+/* ---------- Contenido ---------- */
+
+main { flex: 1; padding: 0 clamp(1rem, 5vw, 3.5rem); }
+
+.reel-meta {
+  font-family: "Big Shoulders Text", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.2rem;
+}
+.reel-meta .section-name { color: var(--amber); }
+
+.lead { padding: 3.2rem 0 2.4rem; max-width: 64rem; }
+.lead h1, .lead h2 {
+  font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.005em;
+  margin: 0 0 1.4rem;
+  text-wrap: balance;
+}
+.lead h2 a { text-decoration: none; }
+.dek {
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 40em;
+  margin: 0;
+  text-wrap: pretty;
+}
+.byline { margin: 1.4rem 0 0; font-size: 1rem; color: var(--muted); }
+.byline strong { color: var(--ink); font-weight: 600; }
+
+/* Ficha técnica: tira de fotogramas */
+.ficha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 0 0 3rem;
+  max-width: 64rem;
+}
+.ficha div { background: var(--surface); padding: 0.75rem 0.95rem 0.85rem; }
+.ficha dt { font-family: "Big Shoulders Text", sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--amber); }
+.ficha dd { margin: 0.15rem 0 0; font-size: 1rem; line-height: 1.35; }
+
+.body { max-width: 37rem; padding-bottom: 2rem; }
+.body p { margin: 0 0 1.3em; hyphens: auto; text-wrap: pretty; }
+.body p:first-child::first-letter {
+  font-family: "Big Shoulders Stencil Display", sans-serif;
+  font-weight: 900;
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.78;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--amber);
+}
+.body .scene-break { text-align: left; color: var(--faint); letter-spacing: 0.6em; margin: 2rem 0; }
+
+.continue { display: inline-block; margin-top: 0.4rem; font-family: "Big Shoulders Text", sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.03em; color: var(--amber); text-decoration: none; border-bottom: 2px solid var(--amber); padding-bottom: 2px; }
+.continue:hover { color: var(--ink); border-color: var(--ink); }
+
+/* Fuentes */
+.sources { max-width: 37rem; border-top: 1px solid var(--rule); padding: 1.6rem 0 0; margin: 1rem 0 2.5rem; }
+.sources h2 { font-family: "Big Shoulders Text", sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; }
+.sources ol { margin: 0; padding-left: 1.3rem; font-size: 0.95rem; line-height: 1.5; color: var(--muted); }
+.sources li { margin-bottom: 0.35rem; overflow-wrap: anywhere; }
+
+/* Compartir */
+.share { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; max-width: 37rem; margin: 0 0 3rem; }
+.share-btn {
+  font: 600 0.98rem "Big Shoulders Text", sans-serif;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.share-btn:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Bobinas anteriores */
+.reels { border-top: 1px solid var(--rule); padding: 2.2rem 0 3rem; max-width: 64rem; }
+.reels > h2 { font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 1.9rem; margin: 0 0 1.2rem; }
+.reel-list { list-style: none; margin: 0; padding: 0; }
+.reel-list li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 1.2rem; padding: 1.05rem 0; border-bottom: 1px solid var(--rule); }
+.reel-num { font-family: "Big Shoulders Stencil Display", sans-serif; font-weight: 900; font-size: 2.2rem; line-height: 1; color: var(--faint); }
+.reel-list a { font-family: "Big Shoulders Display", sans-serif; font-weight: 700; font-size: 1.45rem; line-height: 1.12; text-decoration: none; }
+.reel-list .meta { display: block; margin-top: 0.3rem; font-size: 0.95rem; color: var(--muted); }
+.reel-list .meta .section-name { color: var(--amber); }
+.empty { color: var(--muted); font-style: italic; }
+
+.secciones { max-width: 37rem; color: var(--muted); font-size: 1rem; margin: 0 0 3rem; }
+.secciones dt { font-family: "Big Shoulders Text", sans-serif; font-weight: 700; color: var(--amber); font-size: 1.05rem; margin-top: 0.9rem; }
+.secciones dd { margin: 0.1rem 0 0; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.4rem clamp(1rem, 5vw, 3.5rem) 2rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- Móvil: el borde pasa a ser una tira horizontal ---------- */
+@media (max-width: 640px) {
+  .filmedge { position: relative; width: auto; height: 34px; bottom: auto; }
+  .filmedge::before {
+    left: 0; right: 0; top: 6px; bottom: auto; width: auto; height: 10px;
+    background-size: 16px 10px; background-repeat: repeat-x;
+    -webkit-mask: repeating-linear-gradient(to right, #000 0 14px, transparent 14px 26px);
+            mask: repeating-linear-gradient(to right, #000 0 14px, transparent 14px 26px);
+  }
+  .filmedge span { writing-mode: horizontal-tb; left: 8px; top: 18px; font-size: 0.6rem; }
+  .page { margin-left: 0; }
+  .masthead { padding-top: 1.5rem; }
+  .lead { padding-top: 2.2rem; }
+  .reel-list li { grid-template-columns: 3.4rem 1fr; }
+  .reel-num { font-size: 1.7rem; }
+  body { font-size: 1.07rem; }
+}
