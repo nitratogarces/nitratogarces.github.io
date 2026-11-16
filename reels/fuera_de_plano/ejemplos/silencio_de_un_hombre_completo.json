@@ -1,0 +1,243 @@
+{
+ "salida": "Fuera de Plano - El silencio de un hombre - reel (pantalla completa).mp4",
+ "escenas": [
+  {
+   "dur": 7.0,
+   "seccion": "Fuera de plano",
+   "reticula": true,
+   "titulo": "Diez minutos sin una palabra",
+   "medios": [
+    {
+     "video": "material/apertura.mov",
+     "desde": 100,
+     "zoom": [
+      1.0,
+      1.08
+     ]
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "suave",
+     "texto": "*El silencio de un hombre* (Jean-Pierre Melville, 1967) empieza en una habitación gris. Y nadie habla.",
+     "desde": 1.2
+    }
+   ],
+   "portada": true,
+   "orden": [
+    "titulo",
+    "ventana",
+    "textos"
+   ],
+   "ventana": {
+    "alto": 420
+   }
+  },
+  {
+   "dur": 5.0,
+   "seccion": "El primer plano",
+   "medios": [
+    {
+     "video": "material/montaje.mov",
+     "desde": 84.2,
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco_x": 0.42
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "cuerpo",
+     "texto": "Un hombre tumbado en la cama, en la penumbra. Enciende un cigarrillo y el humo sube hacia la luz de la ventana.",
+     "desde": 0.5
+    }
+   ]
+  },
+  {
+   "dur": 3.8,
+   "seccion": "El primer plano",
+   "medios": [
+    {
+     "video": "material/apertura.mov",
+     "desde": 153,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco_x": 0.35
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "cuerpo",
+     "texto": "En un rincón, la jaula de un pájaro.",
+     "desde": 0.4
+    }
+   ]
+  },
+  {
+   "dur": 7.6,
+   "seccion": "La cita",
+   "medios": [
+    {
+     "video": "material/apertura.mov",
+     "desde": 80.5,
+     "zoom": [
+      1.0,
+      1.03
+     ],
+     "foco_x": 0.8,
+     "alto": 1020
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "cuerpo",
+     "texto": "En pantalla, una frase atribuida al *Libro del Bushido*: no hay soledad mayor que la del samurái, salvo quizá la de un tigre en la selva.",
+     "desde": 0.6
+    },
+    {
+     "estilo": "cuerpo",
+     "texto": "Ese libro no existe. Lo inventó Melville.",
+     "desde": 4.2
+    }
+   ],
+   "fundido": 760,
+   "texto_arriba": false
+  },
+  {
+   "dur": 8.0,
+   "seccion": "Alain Delon es Jef Costello",
+   "medios": [
+    {
+     "video": "material/apertura.mov",
+     "desde": 187.6,
+     "lento": 1.15,
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco_x": 0.5
+    },
+    {
+     "imagen": "material/gabardina.jpg",
+     "en": 4.6,
+     "zoom": [
+      1.0,
+      1.05
+     ],
+     "foco_x": [
+      0.42,
+      0.5
+     ],
+     "foco_y": 0.4
+    }
+   ],
+   "numero": "10",
+   "numero_pie": "Minutos hasta la primera frase",
+   "textos": [
+    {
+     "estilo": "cuerpo",
+     "texto": "Hasta entonces, la película se cuenta solo con lo que hace él.",
+     "desde": 1.8
+    }
+   ]
+  },
+  {
+   "dur": 7.2,
+   "seccion": "Cuando por fin habla",
+   "medios": [
+    {
+     "video": "material/montaje.mov",
+     "tramos": [
+      [
+       230.8,
+       232.5
+      ],
+      [
+       235.85,
+       237.45
+      ]
+     ],
+     "lento": 2.1,
+     "zoom": [
+      1.0,
+      1.06
+     ],
+     "foco_x": 0.6
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "dialogo",
+     "texto": "—¿Nada que decir?",
+     "desde": 0.5,
+     "espacio": 40
+    },
+    {
+     "estilo": "dialogo",
+     "texto": "—No con un arma apuntándome.",
+     "desde": 1.9,
+     "espacio": 40
+    },
+    {
+     "estilo": "dialogo",
+     "texto": "—¿Es un principio?",
+     "desde": 3.5,
+     "espacio": 40
+    },
+    {
+     "estilo": "dialogo",
+     "texto": "—Una costumbre.",
+     "desde": 4.8
+    }
+   ]
+  },
+  {
+   "dur": 9.0,
+   "medios": [
+    {
+     "video": "material/montaje.mov",
+     "desde": 555.0,
+     "lento": 2.0,
+     "zoom": [
+      1.0,
+      1.1
+     ],
+     "foco_x": 0.5
+    }
+   ],
+   "textos": [
+    {
+     "estilo": "cursiva",
+     "texto": "No sé si hay algo más difícil en un plano que quedarse dentro de un silencio sin rellenarlo con las manos o con la cara.",
+     "desde": 0.5
+    },
+    {
+     "estilo": "cursiva",
+     "texto": "Delon lo sostiene diez minutos. Y en ese rato el espectador ya ha empezado a imaginar quién es.",
+     "desde": 4.0
+    }
+   ]
+  },
+  {
+   "dur": 5.0,
+   "seccion": "Fuera de plano",
+   "medios": [
+    {
+     "imagen": "material/delon_sombrero.jpg",
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "foco_y": 0.3,
+     "foco_x": 0.55
+    }
+   ]
+  }
+ ],
+ "formato": "completo",
+ "numerar": false
+}
