@@ -1,0 +1,4 @@
+reels/**/material/
+reels/**/.cache_reel/
+reels/**/*.mp4
+reels/**/prueba_*.png
