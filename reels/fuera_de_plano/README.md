@@ -22,8 +22,9 @@ Una escena puede forzar el otro formato con `"formato"` propio. En pantalla comp
 |---|---|
 | `salida` | Nombre del MP4. |
 | `formato` | `ventana` o `completo`. |
-| `numerar` | `true` añade el contador «01 / 07» al pie. Por defecto, sin numerar. |
-| `firma_pie` | En formato ventana, «Miguel Garcés» pequeño al pie de cada lámina (por defecto sí). En la portada aparece siempre. |
+| `numerar` | `true` añade el contador «01 / 07» al pie. Por defecto, sin numerar (Miguel no lo quiere). |
+
+«Miguel Garcés» aparece una sola vez, pequeño en versalitas al pie del **último plano**. No va en la portada ni en el resto de escenas.
 
 El reel **no termina con la pregunta** de la última lámina del carrusel ni con la firma «Miguel Garcés · Actor»: cierra con una imagen y el rótulo «Fuera de plano», y funde a negro.
 

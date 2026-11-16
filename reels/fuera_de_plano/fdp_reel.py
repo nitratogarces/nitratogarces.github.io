@@ -275,7 +275,7 @@ def main(spec_path, preview=None):
         c = Image.new("RGBA", (W, H), BG + (255,))
         portada = s.get("portada", idx == 0)
         ventana = portada or s.get("formato", fmt) == "ventana"
-        firma = portada or (fmt == "ventana" and spec.get("firma_pie", True))
+        firma = bool(s.get("ultima"))          # «Miguel Garcés» solo al pie del último plano
         num = s.get("num") if numerar else None
         ch = Image.new("RGBA", (W, H), (0, 0, 0, 0)); chrome(ch, firma, num, total_n, 1.0, grid=s.get("reticula", False))
         layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
