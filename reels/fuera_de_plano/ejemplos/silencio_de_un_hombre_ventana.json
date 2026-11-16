@@ -1,7 +1,7 @@
 {
   "salida": "Fuera de Plano - El silencio de un hombre - reel.mp4",
   "formato": "ventana",
-  "numerar": true,
+  "numerar": false,
   "escenas": [
     {"dur": 7.0, "num": 1, "seccion": "Fuera de plano", "reticula": true,
      "titulo": "Diez minutos sin una palabra", "orden": ["titulo", "ventana", "textos"],
