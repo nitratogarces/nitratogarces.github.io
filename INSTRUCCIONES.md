@@ -43,12 +43,26 @@ producciones recientes. No repetir una obra ya tratada en `bobinas_json/`.
 
 ## 3. Elección del tema
 
-**Encargo puntual para la bobina 18 (El archivo vivo):** tiene que ser una
-película o serie contemporánea. Usar el aniversario de 10 años: una obra
-estrenada en 2016, mejor si fue hacia noviembre o diciembre de 2016, y
-preferiblemente una que el público actual tenga reciente (cine o serie de
-plataforma). El resto de la pauta se mantiene. Una vez publicada la bobina 18,
-este párrafo deja de aplicarse.
+**Contemporánea o clásica (alternancia fija).** La mitad de las bobinas trata
+una obra contemporánea (estrenada en los últimos diez años) y la otra mitad
+una clásica (estrenada antes). Se alternan una y otra, y cada vuelta de cuatro
+bobinas empieza al revés que la anterior, para que todas las secciones pasen
+por las dos épocas:
+
+| Bobina | Época |
+|---|---|
+| 17, 25, 33… | clásica |
+| 18, 26, 34… | contemporánea |
+| 19, 27, 35… | clásica |
+| 20, 28, 36… | contemporánea |
+| 21, 29, 37… | contemporánea |
+| 22, 30, 38… | clásica |
+| 23, 31, 39… | contemporánea |
+| 24, 32, 40… | clásica |
+
+En El archivo vivo, contemporánea significa el aniversario de 10 años (una
+obra de hace exactamente una década, o de una fecha cercana). Vale tanto el
+cine como las series de televisión o de plataforma.
 
 Buscar un caso con **una pieza escondida**: un dato poco conocido en los medios
 especializados que cambia cómo se mira la obra. El criterio no es la fama de la
