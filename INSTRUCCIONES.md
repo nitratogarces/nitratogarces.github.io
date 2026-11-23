@@ -5,9 +5,9 @@ criterio editorial, basta con cambiar este texto.
 
 ## 1. ¿Toca bobina hoy?
 
-- La tarea se ejecuta a diario, pero Nitrato publica **cada dos días**.
+- La tarea se ejecuta a diario, pero Nitrato publica **cada cuatro días**.
 - Mira la fecha de la bobina más reciente en `bobinas_json/` (el nombre del
-  archivo es su fecha). Si han pasado **menos de dos días** desde ella (fecha de
+  archivo es su fecha). Si han pasado **menos de cuatro días** desde ella (fecha de
   hoy en Madrid), no hagas nada más: hoy no toca.
 - La bobina nueva lleva el número siguiente al último publicado.
 

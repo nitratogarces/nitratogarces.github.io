@@ -1,6 +1,6 @@
 # Nitrato
 
-Lo que una película fue antes de ser la película. Una pieza nueva cada dos días,
+Lo que una película fue antes de ser la película. Una pieza nueva cada cuatro días,
 por Miguel Garcés, alternando cuatro secciones: El proceso, El archivo vivo,
 El error y La versión que no viste.
 

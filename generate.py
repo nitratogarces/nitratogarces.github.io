@@ -108,7 +108,7 @@ def page(*, title, description, rel, canonical, body, edge, og_type="website", c
 <main>
 {body}
 </main>
-<footer>Nitrato, de {AUTHOR}. Una bobina nueva cada dos días.</footer>
+<footer>Nitrato, de {AUTHOR}. Una bobina nueva cada cuatro días.</footer>
 </div>
 <script src="{rel}assets/script.js"></script>
 </body>
